@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="A friendly daily wellness check-in for students in your community.">
+  <title>Wellness Buddy | A little better, every day</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Wellness Buddy home">
+      <span class="brand-mark" aria-hidden="true">wb</span>
+      <span>wellness buddy</span>
+    </a>
+    <p class="topbar-note"><span class="status-dot" aria-hidden="true"></span> Your daily check-in</p>
+  </header>
+
+  <main id="home">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <div class="welcome-copy">
+        <p class="eyebrow" id="today-label">A NEW DAY, A FRESH START</p>
+        <h1 id="welcome-title">Small steps.<br><span>Good days.</span></h1>
+        <p class="welcome-text">A little check-in for you, right here in your community. Take it one step at a time.</p>
+      </div>
+      <div class="sun-art" aria-hidden="true">
+        <span class="sun">☀</span>
+        <span class="sun-caption">Kaya mo 'yan!</span>
+        <span class="leaf leaf-one"></span>
+        <span class="leaf leaf-two"></span>
+      </div>
+    </section>
+
+    <section class="progress-panel" aria-labelledby="progress-title">
+      <div class="progress-heading">
+        <div>
+          <p class="eyebrow">YOUR DAY, YOUR PACE</p>
+          <h2 id="progress-title">Daily progress</h2>
+        </div>
+        <span class="progress-count" id="progress-count">0 / 6</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="progress-message" id="progress-message" aria-live="polite">Every little step counts. Pick one to begin.</p>
+    </section>
+
+    <div class="content-grid">
+      <section class="habits-panel" aria-labelledby="habits-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A FEW IDEAS FOR TODAY</p>
+            <h2 id="habits-title">My daily habits</h2>
+          </div>
+          <span class="heading-spark" aria-hidden="true">✳</span>
+        </div>
+        <ul class="habit-list" id="habit-list">
+          <li><label class="habit-item"><input type="checkbox" data-habit="morning"><span class="checkmark" aria-hidden="true"></span><span class="habit-icon icon-yellow" aria-hidden="true">☀</span><span class="habit-copy"><strong>Get some morning light</strong><small>Step outside for a little while</small></span></label></li>
+          <li><label class="habit-item"><input type="checkbox" data-habit="water"><span class="checkmark" aria-hidden="true"></span><span class="habit-icon icon-blue" aria-hidden="true">◒</span><span class="habit-copy"><strong>Have a glass of water</strong><small>A refreshing pause between classes</small></span></label></li>
+          <li><label class="habit-item"><input type="checkbox" data-habit="move"><span class="checkmark" aria-hidden="true"></span><span class="habit-icon icon-green" aria-hidden="true">↗</span><span class="habit-copy"><strong>Move your body</strong><small>Stretch, walk, or dance to a song</small></span></label></li>
+          <li><label class="habit-item"><input type="checkbox" data-habit="meal"><span class="checkmark" aria-hidden="true"></span><span class="habit-icon icon-coral" aria-hidden="true">♡</span><span class="habit-copy"><strong>Enjoy a nourishing meal</strong><small>Make time for a meal you enjoy</small></span></label></li>
+          <li><label class="habit-item"><input type="checkbox" data-habit="pause"><span class="checkmark" aria-hidden="true"></span><span class="habit-icon icon-lilac" aria-hidden="true">〰</span><span class="habit-copy"><strong>Take a mindful pause</strong><small>Relax your shoulders and take a breath</small></span></label></li>
+          <li><label class="habit-item"><input type="checkbox" data-habit="connect"><span class="checkmark" aria-hidden="true"></span><span class="habit-icon icon-peach" aria-hidden="true">☻</span><span class="habit-copy"><strong>Connect with someone</strong><small>Share a hello with a friend or family</small></span></label></li>
+        </ul>
+        <p class="gentle-note">Your list is a set of ideas, not a set of rules. Choose what feels right today.</p>
+      </section>
+
+      <aside class="water-panel" aria-labelledby="water-title">
+        <div class="water-heading">
+          <span class="water-symbol" aria-hidden="true">◒</span>
+          <p class="eyebrow">A MOMENT TO REFRESH</p>
+          <h2 id="water-title">Water check-in</h2>
+          <p class="water-intro">Keep a simple count of the glasses you drink today.</p>
+        </div>
+
+        <div class="water-total" aria-live="polite" aria-atomic="true">
+          <span class="water-number" id="water-count">0</span>
+          <span class="water-unit">glasses today</span>
+        </div>
+        <div class="water-glasses" id="water-glasses" aria-hidden="true"></div>
+
+        <div class="water-controls" aria-label="Update today's water total">
+          <button class="step-button" id="water-minus" type="button" aria-label="Remove one glass" disabled>−</button>
+          <button class="add-water-button" id="water-plus" type="button"><span aria-hidden="true">+</span> Add a glass</button>
+        </div>
+        <form class="water-entry" id="water-form">
+          <label for="water-input">Or enter your total</label>
+          <div class="water-entry-row">
+            <input id="water-input" type="number" min="0" max="99" step="1" inputmode="numeric" value="0">
+            <button type="submit">Save</button>
+          </div>
+        </form>
+        <p class="water-footnote">A personal check-in, not a health target. Your needs can vary.</p>
+      </aside>
+    </div>
+
+    <footer class="page-footer">
+      <span>Made for everyday moments <span aria-hidden="true">✳</span></span>
+      <span>Wellness looks different for everyone.</span>
+    </footer>
+  </main>
+</body>
+</html>
